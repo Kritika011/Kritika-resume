@@ -2,11 +2,13 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "/src/components/Button";
 // import { Card, CardContent } from "/src/components/card";
-import "./index.css"; // or "./globals.css" for Next.js
-
+import "./index.css"; 
 import { Sun, Moon, Facebook, Twitter, Instagram, Linkedin, Github, Mail } from "lucide-react";
 import  profilePic  from "./image/dp.jpg";
-// import { fromJSON } from "postcss";
+import ambulance from "./image/ambulance.png";
+import stick from "./image/stick.png";
+import stopwatch from "./image/stopwatch.png";
+import sparkquest from "./image/sparkquest.png";
 import quiz from "./image/quiz.png";
 function Card({ children }) {
   return <div className="bg-white shadow-lg rounded-lg p-4 dark:bg-gray-800">{children}</div>;
@@ -101,7 +103,7 @@ export default function App() {
       <img
         src={quiz}
         alt="QuizSphere Project"
-        style={{ width: "500px", height: "300px", objectFit: "cover", borderRadius: "1rem" }}
+        style={{ width: "650px", height: "300px", objectFit: "cover", borderRadius: "1rem" }}
       />
     </motion.div>
 
@@ -114,7 +116,7 @@ export default function App() {
     </div>
   </div>
 
-  {/* Project 2 - Online Banking System */}
+  {/* Project 2 - Emergency ambulance services */}
   <div className="flex flex-col md:flex-row items-center gap-6 mt-8">
     {/* Animated Image */}
     <motion.div
@@ -124,9 +126,9 @@ export default function App() {
       className="flex-shrink-0"
     >
       <img
-        src="./image/dp.jpg"
+        src={ambulance}
         alt="Banking Project"
-        style={{ width: "500px", height: "300px", objectFit: "cover", borderRadius: "1rem" }}
+        style={{ width: "600px", height: "300px", objectFit: "cover", borderRadius: "1rem" }}
       />
     </motion.div>
 
@@ -138,36 +140,38 @@ export default function App() {
       </p>
     </div>
   </div>
-</section>
 
 
-
-
-
-<section className="mt-8">
-  <h2 className="text-2xl font-semibold mb-4">Experience & Projects</h2>
-
-  {/* Project 1 - QuizSphere */}
-  <div className="flex flex-col md:flex-row md:items-start gap-6">
-    {/* Project Image */}
-    <motion.img
-      src={quiz}
-      alt="QuizSphere Project"
-      className="w-full md:w-[500px] h-auto rounded-xl object-cover"
-      initial={{ opacity: 0, x: -100 }}
-      animate={{ opacity: 1, x: 0 }}
+  {/* Project 3 - SparkQuest */}
+    <div className="flex flex-col md:flex-row items-center gap-6 mt-8">
+    {/* Animated Image */}
+    <motion.div
+      initial={{ x: -100, opacity: 0 }}
+      whileInView={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.8 }}
-    />
+      className="flex-shrink-0"
+    >
+      <img
+        src={sparkquest}
+        alt="Banking Project"
+        style={{ width: "600px", height: "300px", objectFit: "cover", borderRadius: "1rem" }}
+      />
+    </motion.div>
 
-    {/* Project Details */}
+    {/* Project Description */}
     <div className="flex-1">
-      <h3 className="text-xl font-semibold mt-2 md:mt-0">QuizSphere</h3>
+      <h3 className="text-xl font-semibold">SparkQuest SQ3</h3>
       <p className="mt-2 text-base">
-        A dynamic quiz platform with real-time scoring, personalized insights, and AI-powered analytics. Designed for seamless interaction between students, teachers, and admins.
+        Integrated digital banking platform for secure transactions, UPI support, and account management, built with a modern secure stack and scalable backend systems.
       </p>
     </div>
   </div>
 </section>
+
+
+
+
+
 
       {/* </div>np */}
 
