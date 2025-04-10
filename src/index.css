@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* General Styles */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Theme Styles */
+.bg-gray-900 {
+  background-color: #1a202c;
+}
+.text-white {
+  color: #ffffff;
+}
+.bg-white {
+  background-color: #ffffff;
+}
+.text-gray-900 {
+  color: #1a202c;
+}
+
+/* Button Styles */
+button {
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s ease;
+}
+
+.bg-blue-500 {
+  background-color: #3b82f6;
+  color: white;
+}
+.bg-blue-500:hover {
+  background-color: #2563eb;
+}
+
+.bg-green-500 {
+  background-color: #22c55e;
+  color: white;
+}
+.bg-green-500:hover {
+  background-color: #16a34a;
+}
+
+.bg-gray-700 {
+  background-color: #374151;
+}
+.bg-gray-700:hover {
+  background-color: #1f2937;
+}
+
+.bg-gray-200 {
+  background-color: #e5e7eb;
+}
+.bg-gray-200:hover {
+  background-color: #d1d5db;
+}
+
+/* Card Styles */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: scale(1.02);
+}
+
+/* Contact Form */
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+}
+
+textarea {
+  min-height: 100px;
+}
+
+/* Footer */
+footer {
+  background: #111827;
+  padding: 20px 0;
+  text-align: center;
+  color: white;
+}
+footer .flex {
+  justify-content: center;
+}
