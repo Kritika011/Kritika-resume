@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "/src/components/Button";
-// import { Card, CardContent } from "/src/components/card";
+import MYProjects from './pages/MYProjects';
+import MYHeaders from './pages/Headers';
+import Certificates from './pages/Certificates';
 import "./index.css"; 
+import About from './pages/About';
 import { Sun, Moon, Facebook, Twitter, Instagram, Linkedin, Github, Mail, UserX } from "lucide-react";
 // Project Image 
 
@@ -58,291 +61,12 @@ export default function App() {
         </div>
 
         {/* Header */}
-        <div className="flex flex-col md:flex-row items-center justify-between mt-6">
-          <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}>
-            <motion.h1 className="text-5xl font-bold" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.5, duration: 0.5 }}>
-              Kritika Parmanick
-            </motion.h1>
-            <p className="text-2xl mt-2">Full Stack Developer | AI Enthusiast</p>
-          </motion.div>
-          <motion.img src={profilePic}  alt="Profile"  style={{ width: "300px", height: "300px", borderRadius: "50%", objectFit: "cover" }}  />
-        </div>
-{/* initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}  */}
-        
-        {/* About Me */}
-        <section className="mt-8">
-          <h2 className="text-2xl font-semibold">About Me</h2>
-          <p className="mt-2">I am a passionate Full Stack Developer with experience in creating web applications using modern technologies like React, PHP, MySQL, and AI integrations.</p>
-          <a href="/resume.pdf" download>
-            <Button className="mt-4 bg-blue-500 hover:bg-blue-700 text-white">Download Resume</Button>
-          </a>
-        </section>
-
-        {/* Experience & Projects */}
-  <section className="mt-8">
-  <h2 className="text-2xl font-semibold">Experience & Projects</h2>
-
-  {/* Project 1 - QuizSphere */}
-  <div className="flex flex-col md:flex-row items-center gap-6 mt-6">
-    {/* Animated Image */}
-    <motion.div
-      initial={{ x: -100, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      transition={{ duration: 0.8 }}
-      className="flex-shrink-0"
-    >
-      <img
-        src={quiz}
-        alt="QuizSphere Project"
-        style={{ width: "65vw", height: "35vw", objectFit: "cover", borderRadius: "1rem" }}
-      />
-    </motion.div>
-
-    {/* Project Description */}
-    <div className="flex-1">
-      <h3 className="text-xl font-semibold">QuizSphere</h3>
-      <p className="mt-2 text-base">
-        A dynamic quiz platform with real-time scoring and AI-based insights. Built using React, PHP, MySQL, and Python integrations to offer personalized learning experiences.
-      </p>
-    </div>
-  </div>
-
-  {/* Project 2 - Emergency ambulance services */}
-  <div className="flex flex-col md:flex-row items-center gap-6 mt-8">
-    {/* Animated Image */}
-    <motion.div
-      initial={{ x: -100, opacity: 0 }}
-      whileInView={{ x: 0, opacity: 1 }}
-      transition={{ duration: 0.8 }}
-      className="flex-shrink-0"
-    >
-      <img
-        src={ambulance}
-        alt="Banking Project"
-        style={{ width: "65vw", height: "35vw", objectFit: "cover", borderRadius: "1rem" }}
-      />
-    </motion.div>
-
-    {/* Project Description */}
-    <div className="flex-1">
-      <h3 className="text-xl font-semibold">Online Banking System</h3>
-      <p className="mt-2 text-base">
-        Integrated digital banking platform for secure transactions, UPI support, and account management, built with a modern secure stack and scalable backend systems.
-      </p>
-    </div>
-  </div>
-
-
-{/* Project 3 - Stick */}
-<div className="flex flex-col md:flex-row items-center gap-6 mt-8">
-    {/* Animated Image */}
-    <motion.div
-      initial={{ x: -100, opacity: 0 }}
-      whileInView={{ x: 0, opacity: 1 }}
-      transition={{ duration: 0.8 }}
-      className="flex-shrink-0"
-    >
-      <img
-        src={stick}
-        alt="Balling and Stick"
-        style={{ width: "65vw", height: "35vw", objectFit: "cover", borderRadius: "1rem" }}
-      />
-    </motion.div>
-
-    {/* Project Description */}
-    <div className="flex-1">
-      <h3 className="text-xl font-semibold">Ball and stick</h3>
-      <p className="mt-2 text-base">
-        Integrated digital banking platform for secure transactions, UPI support, and account management, built with a modern secure stack and scalable backend systems.
-      </p>
-    </div>
-  </div>
-
-
-  {/* Project 4 - SparkQuest */}
-    <div className="flex flex-col md:flex-row items-center gap-6 mt-8">
-    {/* Animated Image */}
-    <motion.div
-      initial={{ x: -100, opacity: 0 }}
-      whileInView={{ x: 0, opacity: 1 }}
-      transition={{ duration: 0.8 }}
-      className="flex-shrink-0"
-    >
-      <img
-        src={sparkquest}
-        alt="Banking Project"
-        style={{ width: "65vw", height: "35vw", objectFit: "cover", borderRadius: "1rem" }}
-      />
-    </motion.div>
-
-    {/* Project Description */}
-    <div className="flex-1">
-      <h3 className="text-xl font-semibold">SparkQuest SQ3</h3>
-      <p className="mt-2 text-base">
-        Integrated digital banking platform for secure transactions, UPI support, and account management, built with a modern secure stack and scalable backend systems.
-      </p>
-    </div>
-  </div>
-
-  {/* Project 5 - StopWatch */}
-  <div className="flex flex-col md:flex-row items-center gap-6 mt-6">
-    {/* Animated Image */}
-    <motion.div
-      initial={{ x: -100, opacity: 0 }}
-      whileInView={{ x: 0, opacity: 1 }}
-      transition={{ duration: 0.8 }}
-      className="flex-shrink-0"
-    >
-      <img
-        src={stopwatch}
-        alt="StopWatch Project"
-        style={{ width: "65vw", height: "35vw", objectFit: "cover", borderRadius: "1rem" }}
-      />
-    </motion.div>
-
-    {/* Project Description */}
-    <div className="flex-1">
-      <h3 className="text-xl font-semibold">StopWatch</h3>
-      <p className="mt-2 text-base">
-        Integrated digital banking platform for secure transactions, UPI support, and account management, built with a modern secure stack and scalable backend systems.
-      </p>
-    </div>
-  </div>
-</section>
-
-
-
-
-
-
-      {/* </div>np */}
-
-
-        {/* Certificates */}
-        <section className="mt-8">
-  <h2 className="text-2xl font-semibold mb-6">Certificates</h2>
-
-  <div className="flex flex-col md:flex-row justify-between items-start gap-8">
-    {/* Certificate 1 */}
-    <div className="flex-1 flex flex-col items-center">
-      <motion.div
-        initial={{ x: -100, opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        <img
-          src={uxdesign}
-          alt="UX Design"
-          style={{
-            width: "100%",
-            maxWidth: "600px",
-            height: "300px",
-            objectFit: "cover",
-            borderRadius: "1rem",
-          }}
-        />
-      </motion.div>
-      <h3 className="text-xl font-semibold mt-4 text-center">Google UX Design</h3>
-    </div>
-
-    {/* Certificate 2 */}
-    <div className="flex-1 flex flex-col items-center">
-      <motion.div
-        initial={{ x: 100, opacity: 0 }}
-        whileInView={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.8 }}
-      >
-        <img
-          src={digitalmarketing}
-          alt="Digital Marketing"
-          style={{
-            width: "100%",
-            maxWidth: "600px",
-            height: "300px",
-            objectFit: "cover",
-            borderRadius: "1rem",
-          }}
-        />
-      </motion.div>
-      <h3 className="text-xl font-semibold mt-4 text-center">
-        Google Certified Digital Marketing
-      </h3>
-    </div>
-  </div>
-</section>
-
-<section className="mt-8">
-  <h2 className="text-2xl font-semibold mb-6 text-center">Certificates</h2>
-
-  <div className="flex flex-row flex-wrap justify-center gap-6 ">
-    {/* Certificate 1 */}
-    <div className="flex flex-col items-center w-[300px]">
-      <img
-        src={uxdesign}
-        alt="UX Design"
-        className="w-full h-48 object-cover rounded-lg"
-      />
-      <h3 className="text-md font-semibold mt-2 text-center">Google UX Design</h3>
-    </div>
-
-    {/* Certificate 2 */}
-    <div className="flex flex-col items-center w-[300px] ml-6">
-      <img
-        src={digitalmarketing}
-        alt="Digital Marketing"
-        className="w-full h-48 object-cover rounded-lg"
-      />
-      <h3 className="text-md font-semibold mt-2 text-center">Google Certified Digital Marketing</h3>
-    </div>
-  </div>
-
-  <div className="flex flex-row flex-wrap justify-center gap-6">
-    {/* Certificate 1 */}
-    <div className="flex flex-col items-center w-[300px]">
-      <img
-        src={uxdesign}
-        alt="UX Design"
-        className="w-full h-48 object-cover rounded-lg"
-      />
-      <h3 className="text-md font-semibold mt-2 text-center">Google UX Design</h3>
-    </div>
-
-    {/* Certificate 2 */}
-    <div className="flex flex-col items-center w-[300px]">
-      <img
-        src={digitalmarketing}
-        alt="Digital Marketing"
-        className="w-full h-48 object-cover rounded-lg"
-      />
-      <h3 className="text-md font-semibold mt-2 text-center">Google Certified Digital Marketing</h3>
-    </div>
-  </div>
-</section>
-<section className="mt-8">
-  <h2 className="text-2xl font-semibold mb-6 text-center">Certificates</h2>
-
-  <div className="flex flex-row flex-wrap justify-center gap-6">
-    {/* Certificate 1 */}
-    <div className="flex flex-col items-center w-[300px]">
-      <img
-        src={uxdesign}
-        alt="UX Design"
-        className="w-full h-48 object-cover rounded-lg"
-      />
-      <h3 className="text-md font-semibold mt-2 text-center">Google UX Design</h3>
-    </div>
-
-    {/* Certificate 2 */}
-    <div className="flex flex-col items-center w-[300px]">
-      <img
-        src={digitalmarketing}
-        alt="Digital Marketing"
-        className="w-full h-48 object-cover rounded-lg"
-      />
-      <h3 className="text-md font-semibold mt-2 text-center">Google Certified Digital Marketing</h3>
-    </div>
-  </div>
-</section>
+<MYHeaders />
+<About />
+<MYProjects />
+<h2 className="text-2xl font-semibold mb-6">Certificates</h2>
+<Certificates/>
+  
 
 
 
@@ -353,16 +77,38 @@ export default function App() {
         <section className="mt-8">
           <h2 className="text-2xl font-semibold">Education</h2>
           <p>Bachelor of Computer Applications - Techno India Hooghly</p>
-          <img src="/education.jpg" alt="Education Result" className="w-full rounded-lg mt-4" />
+          <pre>o      Year :- 2022-2025</pre>
+          <pre>o      Aggregate marks :- 8.48</pre>
+          <pre>o      Percentage :- 77.3%</pre>
+          <pre>o      SGPA :- 9.30, 8.30, 8.23, 8.38, 8.17           </pre>
+          {/* <img src="" alt="Education Result" className="w-full rounded-lg mt-4" /> */}
+          <br></br>
+          <p>HIGHER SECONDARY EDUCATION - Debiswari Vidyaniketan</p>
+          <pre>o      Year :- 2021-2022</pre>
+          <pre>o      Aggregate Percentage :- 78%</pre>
+          <pre>o      Percentage :- 82%</pre>
+          <pre>o      Stream:- Science</pre>
+          <pre>o      Math :- 87   </pre>
+          <pre>       Physics :-60    </pre>  
+          <pre>       Chemistry :-72     </pre>
+          <pre>       English :- 91 </pre>
+          <pre>       Bengali :- 84  </pre>
+
+          <pre>       Computer Application :-76  </pre>
+          <p>SECONDARY EDUCATION - Debiswari Vidyaniketan</p>
+          <pre>o      Year :- 2019-2020</pre>
+          <pre>o      Percentage :- 85.42%</pre>
+          <pre>o      Math :-  95</pre>
+          <pre>       English :-  81</pre>
         </section>
 
         {/* Contact Section */}
         <h2 className="text-2xl font-semibold mt-8">Contact Me</h2>
         <div className="grid md:grid-cols-2 gap-6 mt-4">
           <div>
-            <p>Email: kritika@example.com</p>
-            <p>Phone: +91 98765 43210</p>
-            <p>Address: Hooghly, West Bengal</p>
+            <p>Email: pramanikkritika46@gmail.com</p>
+            <p>Phone: +91 8583033636</p>
+            <p>Address: Hooghly, West Bengal, india</p>
           </div>
           <div>
             <input name="name" placeholder="Your Name" className="w-full p-2 border rounded-lg mb-2" onChange={handleInputChange} />
@@ -376,12 +122,11 @@ export default function App() {
       {/* Footer */}
       <footer className="bg-gray-800 text-white py-6 text-center mt-8">
         <div className="flex justify-center space-x-10 ">
-          <a href=""><Facebook /></a>
-          <Twitter />
-          <Instagram />
-          <Linkedin />
-          <Github />
-          <Mail />
+          <a href="https://www.facebook.com/kritika.pramanik.5"><Facebook /></a>
+          <a href="https://www.instagram.com/kritika_rupai/?hl=en"><Instagram /></a>
+          <a href="https://www.linkedin.com/in/kritika-pramanik-bb4254279/"><Linkedin /></a>
+          <a href="https://github.com/Kritika011"><Github /></a>
+          <a href="mailto:pramanikkritika46@gmail.com"><Mail /></a>
         </div>
         <p className="mt-4">&copy; 2025 Kritika Parmanick. All Rights Reserved.</p>
       </footer>
