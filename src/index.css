@@ -5,12 +5,14 @@
 /* General Styles */
 body {
   margin: 0;
+  padding: 0;
+  width: 100vw;
   font-family: "Inter", sans-serif;
-  transition: background 0.3s ease, color 0.3s ease;
+  /* transition: background 0.3s ease, color 0.3s ease; */
 }
 
 .container {
-  max-width: 1200px;
+  width: 80%;
   margin: auto;
   padding: 20px;
 }

@@ -10,22 +10,6 @@ import { Sun, Moon, Facebook, Twitter, Instagram, Linkedin, Github, Mail, UserX 
 // Project Image 
 
 import  profilePic  from "./image/dp.jpg";
-import ambulance from "./image/ambulance.png";
-import stick from "./image/stick.png";
-import stopwatch from "./image/stopwatch.png";
-import sparkquest from "./image/sparkquest.png";
-import quiz from "./image/quiz.png";
-
-// Certificate image
-
-import uxdesign from "./image/uxdesign.png";
-import digitalmarketing from "./image/googledigital.png";
-// import education from "./image/education.jpg";
-import kgcss from "./image/kgcss.png";
-import kgreact from "./image/kgreact.png";
-import tihhtml from "./image/tihhtml.png";
-import infosyspresent from "./image/infosyspresent.png";  
-import infosyspython from "./image/infosyspython.png";
 
 
 function Card({ children }) {
@@ -51,7 +35,7 @@ export default function App() {
 
 
   return (
-    <div className={darkMode ? "bg-gray-900 text-white" : "bg-white text-gray-900"}>
+    <div className={darkMode ? "w-full bg-gray-900 text-white" : "bg-white text-gray-900"}>
       <div className="container mx-auto p-6">
         {/* Theme Toggle Button */}
         <div className="flex justify-end">
@@ -128,7 +112,7 @@ export default function App() {
           <a href="https://github.com/Kritika011"><Github /></a>
           <a href="mailto:pramanikkritika46@gmail.com"><Mail /></a>
         </div>
-        <p className="mt-4">&copy; 2025 Kritika Parmanick. All Rights Reserved.</p>
+        <p className="mt-4">&copy; 2025 Kritika Parmanik. All Rights Reserved.</p>
       </footer>
     </div>
   );
