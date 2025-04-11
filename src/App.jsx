@@ -3,34 +3,49 @@ import { motion } from "framer-motion";
 import { Button } from "/src/components/Button";
 // import { Card, CardContent } from "/src/components/card";
 import "./index.css"; 
-import { Sun, Moon, Facebook, Twitter, Instagram, Linkedin, Github, Mail } from "lucide-react";
+import { Sun, Moon, Facebook, Twitter, Instagram, Linkedin, Github, Mail, UserX } from "lucide-react";
+// Project Image 
+
 import  profilePic  from "./image/dp.jpg";
 import ambulance from "./image/ambulance.png";
 import stick from "./image/stick.png";
 import stopwatch from "./image/stopwatch.png";
 import sparkquest from "./image/sparkquest.png";
 import quiz from "./image/quiz.png";
+
+// Certificate image
+
+import uxdesign from "./image/uxdesign.png";
+import digitalmarketing from "./image/googledigital.png";
+// import education from "./image/education.jpg";
+import kgcss from "./image/kgcss.png";
+import kgreact from "./image/kgreact.png";
+import tihhtml from "./image/tihhtml.png";
+import infosyspresent from "./image/infosyspresent.png";  
+import infosyspython from "./image/infosyspython.png";
+
+
 function Card({ children }) {
   return <div className="bg-white shadow-lg rounded-lg p-4 dark:bg-gray-800">{children}</div>;
 }
-
 // Card Content Component
 function CardContent({ children }) {
   return <div className="p-4">{children}</div>;
 }
 
+
+
 export default function App() {
   const [darkMode, setDarkMode] = useState(true); // Default to dark mode
   const toggleTheme = () => setDarkMode(!darkMode);
   const [contact, setContact] = useState({ name: "", email: "", phone: "", message: "" });
-
   const handleInputChange = (e) => {
     setContact({ ...contact, [e.target.name]: e.target.value });
   };
-
   const handleSubmit = () => {
     console.log("Message Sent:", contact);
   };
+
 
   return (
     <div className={darkMode ? "bg-gray-900 text-white" : "bg-white text-gray-900"}>
@@ -53,6 +68,7 @@ export default function App() {
           <motion.img src={profilePic}  alt="Profile"  style={{ width: "300px", height: "300px", borderRadius: "50%", objectFit: "cover" }}  />
         </div>
 {/* initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5 }}  */}
+        
         {/* About Me */}
         <section className="mt-8">
           <h2 className="text-2xl font-semibold">About Me</h2>
@@ -63,32 +79,7 @@ export default function App() {
         </section>
 
         {/* Experience & Projects */}
-        <section className="mt-8">
-  <h2 className="text-2xl font-semibold">Experience & Projects</h2>
-  {/* Ensuring side-by-side layout */}
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
-    <Card darkMode={darkMode}>
-      <CardContent>
-        <img src={quiz} alt="Project 1" style={{ width: "500px", height: "300px", objectFit: "fit" }}  />
-        <h3 className="text-xl pink font-semibold mt-2">QuizSphere</h3>
-        <p>A dynamic quiz platform with real-time scoring and AI-based insights.</p>
-      </CardContent>
-    </Card>
-
-    <Card darkMode={darkMode}>
-      <CardContent>
-        <img src="./image/dp.jpg" alt="Project 2" className="w-full rounded-lg" />
-        <h3 className="text-xl font-semibold mt-2">Online Banking System</h3>
-        <p>Integrated digital banking solutions with secure transactions and UPI support.</p>
-      </CardContent>
-    </Card>
-  </div>
-</section>
-
-
-
-
-<section className="mt-8">
+  <section className="mt-8">
   <h2 className="text-2xl font-semibold">Experience & Projects</h2>
 
   {/* Project 1 - QuizSphere */}
@@ -103,7 +94,7 @@ export default function App() {
       <img
         src={quiz}
         alt="QuizSphere Project"
-        style={{ width: "650px", height: "300px", objectFit: "cover", borderRadius: "1rem" }}
+        style={{ width: "65vw", height: "35vw", objectFit: "cover", borderRadius: "1rem" }}
       />
     </motion.div>
 
@@ -128,7 +119,7 @@ export default function App() {
       <img
         src={ambulance}
         alt="Banking Project"
-        style={{ width: "600px", height: "300px", objectFit: "cover", borderRadius: "1rem" }}
+        style={{ width: "65vw", height: "35vw", objectFit: "cover", borderRadius: "1rem" }}
       />
     </motion.div>
 
@@ -142,7 +133,33 @@ export default function App() {
   </div>
 
 
-  {/* Project 3 - SparkQuest */}
+{/* Project 3 - Stick */}
+<div className="flex flex-col md:flex-row items-center gap-6 mt-8">
+    {/* Animated Image */}
+    <motion.div
+      initial={{ x: -100, opacity: 0 }}
+      whileInView={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      className="flex-shrink-0"
+    >
+      <img
+        src={stick}
+        alt="Balling and Stick"
+        style={{ width: "65vw", height: "35vw", objectFit: "cover", borderRadius: "1rem" }}
+      />
+    </motion.div>
+
+    {/* Project Description */}
+    <div className="flex-1">
+      <h3 className="text-xl font-semibold">Ball and stick</h3>
+      <p className="mt-2 text-base">
+        Integrated digital banking platform for secure transactions, UPI support, and account management, built with a modern secure stack and scalable backend systems.
+      </p>
+    </div>
+  </div>
+
+
+  {/* Project 4 - SparkQuest */}
     <div className="flex flex-col md:flex-row items-center gap-6 mt-8">
     {/* Animated Image */}
     <motion.div
@@ -154,13 +171,38 @@ export default function App() {
       <img
         src={sparkquest}
         alt="Banking Project"
-        style={{ width: "600px", height: "300px", objectFit: "cover", borderRadius: "1rem" }}
+        style={{ width: "65vw", height: "35vw", objectFit: "cover", borderRadius: "1rem" }}
       />
     </motion.div>
 
     {/* Project Description */}
     <div className="flex-1">
       <h3 className="text-xl font-semibold">SparkQuest SQ3</h3>
+      <p className="mt-2 text-base">
+        Integrated digital banking platform for secure transactions, UPI support, and account management, built with a modern secure stack and scalable backend systems.
+      </p>
+    </div>
+  </div>
+
+  {/* Project 5 - StopWatch */}
+  <div className="flex flex-col md:flex-row items-center gap-6 mt-6">
+    {/* Animated Image */}
+    <motion.div
+      initial={{ x: -100, opacity: 0 }}
+      whileInView={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      className="flex-shrink-0"
+    >
+      <img
+        src={stopwatch}
+        alt="StopWatch Project"
+        style={{ width: "65vw", height: "35vw", objectFit: "cover", borderRadius: "1rem" }}
+      />
+    </motion.div>
+
+    {/* Project Description */}
+    <div className="flex-1">
+      <h3 className="text-xl font-semibold">StopWatch</h3>
       <p className="mt-2 text-base">
         Integrated digital banking platform for secure transactions, UPI support, and account management, built with a modern secure stack and scalable backend systems.
       </p>
@@ -178,24 +220,136 @@ export default function App() {
 
         {/* Certificates */}
         <section className="mt-8">
-          <h2 className="text-2xl font-semibold">Certificates</h2>
-          <div className="grid md:grid-cols-2 gap-6 mt-4">
-            <Card>
-              <CardContent>
-                <img src="/certificate1.jpg" alt="Certificate 1" className="w-full rounded-lg" />
-                <h3 className="text-xl font-semibold mt-2">AI & ML Certification</h3>
-              </CardContent>
-            </Card>
-            <Card>
-              <CardContent>
-                <img src="/certificate2.jpg" alt="Certificate 2" className="w-full rounded-lg" />
-                <h3 className="text-xl font-semibold mt-2">Full Stack Development</h3>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
+  <h2 className="text-2xl font-semibold mb-6">Certificates</h2>
 
-        {/* Education */}
+  <div className="flex flex-col md:flex-row justify-between items-start gap-8">
+    {/* Certificate 1 */}
+    <div className="flex-1 flex flex-col items-center">
+      <motion.div
+        initial={{ x: -100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        <img
+          src={uxdesign}
+          alt="UX Design"
+          style={{
+            width: "100%",
+            maxWidth: "600px",
+            height: "300px",
+            objectFit: "cover",
+            borderRadius: "1rem",
+          }}
+        />
+      </motion.div>
+      <h3 className="text-xl font-semibold mt-4 text-center">Google UX Design</h3>
+    </div>
+
+    {/* Certificate 2 */}
+    <div className="flex-1 flex flex-col items-center">
+      <motion.div
+        initial={{ x: 100, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
+        <img
+          src={digitalmarketing}
+          alt="Digital Marketing"
+          style={{
+            width: "100%",
+            maxWidth: "600px",
+            height: "300px",
+            objectFit: "cover",
+            borderRadius: "1rem",
+          }}
+        />
+      </motion.div>
+      <h3 className="text-xl font-semibold mt-4 text-center">
+        Google Certified Digital Marketing
+      </h3>
+    </div>
+  </div>
+</section>
+
+<section className="mt-8">
+  <h2 className="text-2xl font-semibold mb-6 text-center">Certificates</h2>
+
+  <div className="flex flex-row flex-wrap justify-center gap-6 ">
+    {/* Certificate 1 */}
+    <div className="flex flex-col items-center w-[300px]">
+      <img
+        src={uxdesign}
+        alt="UX Design"
+        className="w-full h-48 object-cover rounded-lg"
+      />
+      <h3 className="text-md font-semibold mt-2 text-center">Google UX Design</h3>
+    </div>
+
+    {/* Certificate 2 */}
+    <div className="flex flex-col items-center w-[300px] ml-6">
+      <img
+        src={digitalmarketing}
+        alt="Digital Marketing"
+        className="w-full h-48 object-cover rounded-lg"
+      />
+      <h3 className="text-md font-semibold mt-2 text-center">Google Certified Digital Marketing</h3>
+    </div>
+  </div>
+
+  <div className="flex flex-row flex-wrap justify-center gap-6">
+    {/* Certificate 1 */}
+    <div className="flex flex-col items-center w-[300px]">
+      <img
+        src={uxdesign}
+        alt="UX Design"
+        className="w-full h-48 object-cover rounded-lg"
+      />
+      <h3 className="text-md font-semibold mt-2 text-center">Google UX Design</h3>
+    </div>
+
+    {/* Certificate 2 */}
+    <div className="flex flex-col items-center w-[300px]">
+      <img
+        src={digitalmarketing}
+        alt="Digital Marketing"
+        className="w-full h-48 object-cover rounded-lg"
+      />
+      <h3 className="text-md font-semibold mt-2 text-center">Google Certified Digital Marketing</h3>
+    </div>
+  </div>
+</section>
+<section className="mt-8">
+  <h2 className="text-2xl font-semibold mb-6 text-center">Certificates</h2>
+
+  <div className="flex flex-row flex-wrap justify-center gap-6">
+    {/* Certificate 1 */}
+    <div className="flex flex-col items-center w-[300px]">
+      <img
+        src={uxdesign}
+        alt="UX Design"
+        className="w-full h-48 object-cover rounded-lg"
+      />
+      <h3 className="text-md font-semibold mt-2 text-center">Google UX Design</h3>
+    </div>
+
+    {/* Certificate 2 */}
+    <div className="flex flex-col items-center w-[300px]">
+      <img
+        src={digitalmarketing}
+        alt="Digital Marketing"
+        className="w-full h-48 object-cover rounded-lg"
+      />
+      <h3 className="text-md font-semibold mt-2 text-center">Google Certified Digital Marketing</h3>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+{/* School life */}
         <section className="mt-8">
           <h2 className="text-2xl font-semibold">Education</h2>
           <p>Bachelor of Computer Applications - Techno India Hooghly</p>
